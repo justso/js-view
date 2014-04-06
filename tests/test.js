@@ -1,13 +1,28 @@
 var W = window;
 var C = W.console;
-
-function Size(w, h) {
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+var Size = function (w, h) {
     this.w = isNaN(w) ? '?' : w;
     this.h = isNaN(h) ? '?' : h;
-}
-Size.prototype.toString = function () {
-    return this.w + ' × ' + this.h;
 };
+Size.prototype.toString = function () {
+    var w = this.round2(this.w);
+    var h = this.round2(this.h);
+    return [w, h].join(' × ');
+};
+Size.prototype.round2 = function (x, y) {
+    if (typeof x !== 'number') {
+        return x;
+    }
+    y = Math.pow(10, parseInt(y || 2));
+    return Math.round(x * y) / y;
+};
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+function labelize(ele, str) {
+    var lab = $('<label>').text(str + ': ');
+    ele.wrap(lab).data('label', lab);
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 var Desktop = {
     _: function () {},
@@ -48,25 +63,14 @@ var Desktop = {
 
 $(function () {
 
-    function labelize(ele, str) {
-        var lab = $('<label>');
-        lab.text(str + ': ');
-        ele.wrap(lab);
-        ele.data('label', lab);
-    }
-
     function updateInput() {
         var me = $(this);
-        var dat = me.data()['part']; //    read data
-        if (!dat) return functionInput(me);
-        var vals = dat.split(' '); //   split data on space
-        var ele = $(vals[0]); //        use first to choose element
-        ele = (ele.length) ? ele : [window];
-        var prop = vals[1]; //          use second to determine which property
-        var out = ele[0][prop];
-        me.val(out);
-        C.debug(out);
+        if (me.data()['function']) {
+            return functionInput(me);
+        }
+        C.debug(me);
     }
+
     function functionInput(me) {
         var dat = me.data()['function']; //    read data
         var out = Desktop['get' + dat + 'Size']();
@@ -95,12 +99,10 @@ $(function () {
 
 
 
-
     // to get viewport size measure html
-    $(W).on('resize', _.throttle(function () {
+    $(W).on('load resize scroll', _.throttle(function () {
         $('input').each(updateInput);
-    }, 333)).resize();
-
+    }, 333));
 
 });
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */

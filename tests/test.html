@@ -9,25 +9,27 @@
 <title>JS View test</title>
 </head>
 <body>
-pre
-    <div>the 'div' Element </div>
-post
-<article>
-    <pre>DESKTOP </pre>
-    <input data-function="Body"><br>
-    <input data-function="Document"><br>
-    <input data-function="Element"><br>
-    <input data-function="Screen"><br>
-    <input data-function="Scroll"><br>
-    <input data-function="Viewport"><br>
-    <input data-function="Window"><br>
+    before<div>div</div>after
+<hr class="normal">
+<hr class="rotate">
+<article class="desktop">
+    <h4>DESKTOP</h4>
+    <input data-function="Body">
+    <input data-function="Document">
+    <input data-function="Element">
+    <input data-function="Screen">
+    <input data-function="Scroll">
+    <input data-function="Viewport">
+    <input data-function="Window">
 </article>
-<article>
-    <pre>LEGEND
+<article class="legend">
+    <h4>LEGEND</h4>
     gray   =  html
     blue   =  body
     yellow =   div
-    pink = article
+    red  = article
+    orange = vrule
+    green  = hrule
 </article>
     </body>
 </html>
