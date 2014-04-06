@@ -40,6 +40,18 @@ var Desktop = {
     getWindowSize: function () {
         return new Size(W.innerWidth, W.innerHeight);
     },
+    get$bodySize: function () {
+        var ele = $('body');
+        return new Size(ele.width(), ele.height());
+    },
+    get$documentSize: function () {
+        var ele = $(W.document);
+        return new Size(ele.width(), ele.height());
+    },
+    get$windowSize: function () {
+        var ele = $(W);
+        return new Size(ele.width(), ele.height());
+    },
 };
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
