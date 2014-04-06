@@ -6,6 +6,7 @@
     line-height: 1;
     box-sizing: border-box;
 }
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 html {
     background-color: #ccc;
 }
@@ -59,3 +60,4 @@ h4 {
 input {
     text-align: center;
 }
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */

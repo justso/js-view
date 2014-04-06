@@ -1,29 +1,11 @@
 var W = window;
 var C = W.console;
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-var Size = function (w, h) {
-    this.w = isNaN(w) ? '?' : w;
-    this.h = isNaN(h) ? '?' : h;
-};
-Size.prototype.toString = function () {
-    var w = this.round2(this.w);
-    var h = this.round2(this.h);
-    return [w, h].join(' × ');
-};
-Size.prototype.round2 = function (x, y) {
-    if (typeof x !== 'number') {
-        return x;
-    }
-    y = Math.pow(10, parseInt(y || 2));
-    return Math.round(x * y) / y;
-};
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 function labelize(ele, str) {
     var lab = $('<label>').text(str + ': ');
     ele.wrap(lab).data('label', lab);
 }
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
 var Desktop = {
     _: function () {},
     getBodySize: function () {
@@ -33,7 +15,8 @@ var Desktop = {
         return W.document.documentElement;
     },
     getDocumentSize: function () {
-        return new Size();
+        var ele = this.getDocument();
+        return new Size(ele.offsetWidth, ele.offsetHeight);
     },
     getElementSize: function (ele) {
         ele = ele || 'div';
