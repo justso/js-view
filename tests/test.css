@@ -1,0 +1,27 @@
+html {
+    border: 1px solid gray;
+}
+body {
+    border: 1px solid blue;
+}
+div {
+    background-color: yellow;
+    width: 3000px;
+}
+
+article {
+    border: 1px solid pink;
+    font-family: monospace;
+    font-size: 11px;
+    left: 333px;
+    padding: 1em;
+    position: absolute;
+    text-align: right;
+    top: 333px;
+}
+article + article {
+    left: 111px;
+}
+input {
+
+}
