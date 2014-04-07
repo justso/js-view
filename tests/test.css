@@ -40,19 +40,25 @@ article {
     padding: 1em;
     position: fixed;
     text-align: right;
-    top: 100px;
+    top: 70px;
     white-space: pre-line;
 }
 article, article * {
     font-size: 10px;
 }
 article.desktop {
-    left: 150px;
-    width: 250px;
+    left: 20px;
+    width: 251px;
 }
 article.legend {
-    left: 20px;
+    left: 270px;
     width: 131px;
+}
+article.notes {
+    left: 400px;
+    text-align: left;
+    white-space: pre;
+    width: 350px;
 }
 h4 {
     font-size: 14px;
