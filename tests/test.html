@@ -10,11 +10,14 @@
 <title>JS View test</title>
 </head>
 <body>
-<hr class="rotate">
-before 5 x 3000
-<div>ELEMENT spill over</div>
-after 3000 x 5
+text before 3000 x 5
 <hr class="normal">
+<div>
+div ELEMENT spill over
+</div>
+<hr class="rotate">
+text after 5 x 3000
+<div id="blah">
 <article class="desktop">
     <h4>DESKTOP</h4>
     <input data-function="Body">
@@ -30,26 +33,28 @@ after 3000 x 5
 </article>
 <article class="legend">
     <h4>LEGEND</h4>
-    black   =  html
-    blue    =  body
-    yellow  =   div
+    grays   =   html
+    blue    =   body
+    yellow  =    div
     orange  = v rule
     green   = h rule
-    red   =  article
+    red    = article
 </article>
 <article class="notes">
-<h4>NOTES</h4>
-All iOS
-    Viewport width stays 980
-    but height changes with orientation
-        iphone (1090 to 654px)
-        ipad (1185 to 644)
-    Window and Scroll are the only other variables
-
-All devices
-    Window is viewable area
-    $window === Viewport
-    Screen never changes
+    <h4>NOTES</h4>
+<strong>All iOS</strong>
+Viewport width stays 980
+  but height changes
+  with land orientation
+    iphone (1090 to 654px)
+    ipad (1185 to 644)
+Window and Scroll are
+  the only other variables
+<strong>All devices</strong>
+Window is viewable area
+$window === Viewport
+Screen never changes
 </article>
-    </body>
+</div>
+</body>
 </html>
