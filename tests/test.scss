@@ -5,36 +5,38 @@
 }
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 html {
-    background-color: #ccc;
-    border: 5px solid #333;
+    background-color: transparentize(black, 0.75);
+    border: 5px solid transparentize(black, 0.5);
     font: 10px/1.5 monospace;
 }
 body {
-    background-color: transparentize(steelblue, 0.5);
+    background-color: transparentize(blue, 0.75);
 }
 div {
     background-color: transparentize(yellow, 0.75);
+    clear: both;
     width: 3000px;
+    height: 30px;
 }
 hr {
-    background-color: yellow;
+    background-color: purple;
     border: 2px dashed transparentize(white, 0.75);
     float: left;
 
     &.normal {
-        background-color: transparentize(lime, 0.5);
-        height: 5px;
+        background-color: transparentize(lime, 0.75);
+        height: 30px;
         width: 3000px;
     }
     &.rotate {
-        background-color:  transparentize(orange, 0.5);
+        background-color:  transparentize(orange, 0.75);
         height: 3000px;
-        width: 5px;
+        width: 30px;
     }
 }
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 article {
-    border: 1px solid red;
+    border: 1px solid transparentize(red, 0.5);
     overflow: auto;
     padding: 1em;
     white-space: pre-line;
@@ -63,6 +65,7 @@ input {
 #blah {
     -webkit-columns: 2;
     -webkit-column-gap: 0;
+    height: auto;
     left: 20px;
     position: fixed;
     top: 80px;
